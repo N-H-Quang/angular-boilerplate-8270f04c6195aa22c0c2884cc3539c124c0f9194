@@ -163,6 +163,87 @@ nav {
         }
       }
 
+      button.menu-item {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: 10px;
+        cursor: pointer;
+        min-width: 200px;
+        background: #4caf50;
+        color: black;
+        border-radius: 9px;
+        outline: none;
+        border: none;
+
+        &.disabled {
+          cursor: not-allowed;
+          opacity: 0.3;
+        }
+
+        .item {
+          display: flex;
+
+          span {
+            width: 145px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: normal;
+            word-break: keep-all;
+            white-space: nowrap;
+            transition:
+              opacity 0.3s ease-in-out,
+              transform 0.3s ease-in-out;
+            opacity: 1;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            transform: translateX(0);
+            margin-left: 14px;
+            margin-bottom: 2px;
+            text-align: left;
+          }
+        }
+
+        .submenu-icon {
+          &.open {
+            transform: rotate(180deg);
+          }
+        }
+
+        .sub-menu-items {
+          li {
+            padding: 10px;
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover {
+              background-color: lightgray;
+            }
+
+            app-icon {
+              display: inline-block;
+              transition: color 0.3s ease-in-out;
+            }
+
+            a {
+              span {
+                // Default styles for submenu item text
+                width: 80px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-wrap: normal;
+                white-space: nowrap;
+              }
+            }
+          }
+
+          .disabled {
+            cursor: not-allowed !important;
+            opacity: 0.3 !important;
+          }
+        }
+      }
+
       .sub-menu-items {
         li {
           padding: 10px;

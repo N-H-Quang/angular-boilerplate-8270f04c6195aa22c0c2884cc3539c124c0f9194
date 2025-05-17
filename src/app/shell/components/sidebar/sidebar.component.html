@@ -17,12 +17,7 @@
             <a (click)="activateSidebarItem(i)" [class.active]="item.active" [ngClass]="{ disabled: item.disabled }" class="menu-item" id="menu-item-{{ i }}">
               <div class="item">
                 <ng-container *ngIf="item.icon">
-                  <!-- TODO This below i tag is temporary for demo purposes replace with proper icon passed in menu item -->
-                  @if (item.active) {
-                    <i style="color: var(--gray-400)">^</i>
-                  } @else {
-                    <i style="color: var(--sidebar-icon-color)">^</i>
-                  }
+                  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="{{ item.icon }}" style="color: var(--gray-400)"></mat-icon>
                 </ng-container>
                 <span>{{ item.title | translate }}</span>
               </div>
@@ -64,9 +59,25 @@
         </div>
       </ng-container>
     </ng-container>
+    <div class="menu">
+      <button class="menu-item">
+        <div class="item">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout" style="color: var(--gray-400)"></mat-icon>
+          <span>{{ 'Logout' | translate }}</span>
+        </div>
+      </button>
+    </div>
   </div>
 </nav>
 
 <ng-template #divider>
   <span class="divider"></span>
 </ng-template>
+
+<div class="navbar-menu-items" dir="auto">
+  <div class="menu">
+    <button class="menu-item">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout" style="color: var(--gray-400)"></mat-icon>
+    </button>
+  </div>
+</div>

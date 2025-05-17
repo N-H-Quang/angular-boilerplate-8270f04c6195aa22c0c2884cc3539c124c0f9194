@@ -1,6 +1,6 @@
 export interface NavMenuItem {
   title: string;
-  href: string;
+  href?: string;
   icon?: string;
   url?: string;
   active?: boolean;
@@ -9,4 +9,5 @@ export interface NavMenuItem {
   divider?: boolean;
   roles?: string[];
   permissions?: string[];
+  action?: () => void;
 }
