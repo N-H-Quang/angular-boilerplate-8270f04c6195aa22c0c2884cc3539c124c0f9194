@@ -11,6 +11,7 @@ import { RouteReusableStrategy } from '@core/helpers';
 import { provideServiceWorker } from '@angular/service-worker';
 import { provideHotToastConfig } from '@ngxpert/hot-toast';
 import { SocketIoModule } from '@core/socket-io';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 if (environment.production) {
   enableProdMode();
@@ -79,5 +80,6 @@ export const appConfig: ApplicationConfig = {
       provide: RouteReuseStrategy,
       useClass: RouteReusableStrategy,
     },
+    provideAnimationsAsync('noop'),
   ],
 };
